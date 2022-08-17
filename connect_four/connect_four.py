@@ -1,6 +1,7 @@
-#Connect Four
-#Rules:
-#   This is a player vs player game. Players take turns choosing a column number.
+#Description:
+#   Connect4 created using python. Players begin by choosing a single character as their piece. Players
+#   take turns placing their piece in a column of their choice, if not full, until a Player wins. A 
+#   player wins when their piece is connected in a row of four horizontally, vertically, or diagonally.
 
 class Board:
 
@@ -49,6 +50,8 @@ class Board:
         while col not in self.all_nums:
             col = input("\n" + player.name + ", which column are you putting your piece into? ")
             if col not in self.all_nums:
+                print()
+                self.print()
                 print("Invalid column, choose a column 1-7 with a free space!")
         
         index = self.num_row.index(" " + col + " ")
@@ -220,7 +223,7 @@ def define_result(result, board, winner, loser):
     return False
 
 
-#returns true if both players want to play again. Otherwise, returns false.
+#returns true if both players want to play again and resets the board. Otherwise, returns false.
 def play_again(board, winner, loser):
     answer_1 = ""
     while answer_1 != "yes" and answer_1 != "no":
