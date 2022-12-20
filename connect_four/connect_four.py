@@ -230,7 +230,7 @@ def play_again(board, winner, loser):
         answer_1 = input(winner.name + ", would you like to play again? plz respond either yes or no? ")
     
     answer_2 = ""
-    while answer_2 != "yes" and answer_1 != "no":
+    while answer_2 != "yes" and answer_2 != "no":
         answer_2 = input(loser.name + ", would you like to play again? plz respond either yes or no? ")
 
     if (answer_1 == "yes" and answer_2 == "yes"):
